@@ -1,0 +1,39 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=microperfe
+*Date=21:58:37
+*CreatedBy=Fritzing 0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;THT;40.6908;-16.7715;90;Bottom;J4
+2;220;THT;22.9108;-70.1115;0;Bottom;Res 1
+3;;;73.7106;-38.3613;-90;Bottom;Ultrasonico 3
+4;;;55.9309;-14.2314;0;Bottom;Hole1
+5;;;45.7706;-42.1718;180;Bottom;Ultrasonico 1
+6;;;39.4208;-72.6515;-90;Bottom;Buzzer
+7;;;77.3057;-37.9486;-90;Bottom;TXT1
+8;;;57.2009;-62.4914;0;Bottom;Hole2
+9;;THT;14.0208;-33.2815;90;Bottom;Encoder 2
+10;;THT;8.9408;-6.61149;0;Bottom;Boton 2
+11;;THT;8.9408;-70.1115;0;Bottom;Boton 1
+12;;;50.8507;-73.9215;0;Bottom;Hole6
+13;;;50.8507;-2.80159;0;Bottom;Hole8
+14;;;5.13089;-29.4714;0;Bottom;Hole3
+15;;;2.5907;-2.80159;0;Bottom;Hole5
+16;;THT;16.5608;-16.7715;90;Bottom;J3
+17;;THT;14.0208;-44.7115;-90;Bottom;Encoder 1
+18;;THT;34.3408;-59.9515;90;Bottom;J2
+19;;;45.7711;-35.821;0;Bottom;Ultrasonico 2
+20;;5 mm [THT];36.1898;-6.61163;90;Bottom;LED
+21;220;THT;22.9108;-6.61149;0;Bottom;Res 2
+22;;THT;14.0208;-59.9515;90;Bottom;J1
+23;;;54.2603;-9.48555;0;Bottom;TXT3
+24;;;5.13089;-57.4114;0;Bottom;Hole4

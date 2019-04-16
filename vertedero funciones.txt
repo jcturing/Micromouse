@@ -1,0 +1,145 @@
+bool vectorCero(int v[], int vSize){
+  for(int i = 0; i < vSize; i++){
+    if(v[i] != 0) return false;
+  }
+  return true;
+}
+
+bool checkCero(){
+  for(int i = 0; i < CHECK_CERO-1; i++){
+     rightCero[i] = rightCero[i+1];
+     //centerCero[i] = centerCero[i+1];
+     leftCero[i] = leftCero[i+1];
+  }
+  leftCero[CHECK_CERO-1] = leftDistance;
+  //centerCero[CHECK_CERO-1] = centerDistance;
+  rightCero[CHECK_CERO-1] = rightDistance;
+
+  if(vectorCero(leftCero, CHECK_CERO) || vectorCero(rightCero, CHECK_CERO)) return true;
+  else return false;
+}
+
+/*
+void Maze::cybertech(){  
+	  maze[2][0].setUp(true); maze[2][5].setUp(true); maze[2][6].setUp(true);
+	  maze[1][4].setUp(true); maze[1][5].setUp(true); maze[1][7].setUp(true);
+	  maze[3][3].setUp(true); maze[3][5].setUp(true);
+	  maze[4][6].setUp(true);
+	  maze[5][0].setUp(true); maze[5][2].setUp(true); maze[5][3].setUp(true);
+	  maze[5][4].setUp(true); maze[5][5].setUp(true); 
+	  maze[6][1].setUp(true); maze[6][3].setUp(true); maze[6][4].setUp(true);
+	  maze[6][6].setUp(true);
+	  maze[7][3].setUp(true); maze[7][5].setUp(true);
+	  
+	  maze[0][2].setLeft(true); maze[0][3].setLeft(true);
+	  maze[1][1].setLeft(true); maze[1][2].setLeft(true); maze[1][3].setLeft(true);
+	  maze[1][4].setLeft(true); maze[1][6].setLeft(true);
+	  maze[2][2].setLeft(true); maze[2][4].setLeft(true); maze[2][7].setLeft(true);
+	  maze[3][1].setLeft(true); maze[3][2].setLeft(true); maze[3][3].setLeft(true); 
+	  maze[3][5].setLeft(true); maze[3][7].setLeft(true);
+	  maze[4][1].setLeft(true); maze[4][2].setLeft(true); maze[4][3].setLeft(true);
+	  maze[4][5].setLeft(true); maze[4][7].setLeft(true);
+	  maze[5][3].setLeft(true); maze[5][7].setLeft(true);
+	  maze[6][1].setLeft(true); maze[6][7].setLeft(true);
+	  maze[7][1].setLeft(true); maze[7][2].setLeft(true);
+	  maze[7][3].setLeft(true); maze[7][6].setLeft(true);
+}
+
+void Maze::bigCybertech(){
+	
+	maze[1][2].setUp(true); maze[1][3].setUp(true); maze[1][4].setUp(true);
+	maze[1][5].setUp(true); maze[1][7].setUp(true); maze[1][8].setUp(true);
+	maze[1][9].setUp(true); maze[1][10].setUp(true); maze[1][11].setUp(true);
+	maze[1][12].setUp(true); maze[1][13].setUp(true);
+	maze[2][3].setUp(true); maze[2][4].setUp(true); maze[2][8].setUp(true);
+	maze[2][9].setUp(true); maze[2][10].setUp(true); maze[2][11].setUp(true);
+	maze[2][12].setUp(true);
+	maze[3][4].setUp(true); maze[3][9].setUp(true); maze[3][11].setUp(true);
+	maze[4][4].setUp(true); maze[4][13].setUp(true); maze[4][14].setUp(true);
+	maze[5][1].setUp(true); maze[5][4].setUp(true); maze[5][8].setUp(true);
+	maze[5][9].setUp(true); maze[5][11].setUp(true);
+	maze[6][2].setUp(true); maze[6][4].setUp(true); maze[6][9].setUp(true);
+	maze[6][10].setUp(true);
+	maze[7][1].setUp(true); maze[7][4].setUp(true); maze[7][7].setUp(true);
+	maze[7][9].setUp(true);
+	maze[8][4].setUp(true); maze[8][10].setUp(true);
+	maze[9][4].setUp(true); maze[9][7].setUp(true); maze[9][8].setUp(true);
+	maze[9][9].setUp(true); maze[9][11].setUp(true);
+	maze[10][3].setUp(true); maze[10][4].setUp(true); maze[10][5].setUp(true);
+	maze[10][6].setUp(true); maze[10][7].setUp(true); maze[10][8].setUp(true);
+	maze[10][10].setUp(true);
+	maze[11][3].setUp(true); maze[11][4].setUp(true); maze[11][7].setUp(true);
+	maze[11][9].setUp(true); maze[11][13].setUp(true);
+	maze[12][0].setUp(true); maze[12][3].setUp(true); maze[12][4].setUp(true);
+	maze[12][8].setUp(true); maze[12][10].setUp(true); maze[12][12].setUp(true);
+	maze[12][13].setUp(true);
+	maze[13][2].setUp(true); maze[13][3].setUp(true); maze[13][4].setUp(true);
+	maze[13][7].setUp(true); maze[13][9].setUp(true); maze[13][11].setUp(true);
+	maze[13][13].setUp(true);
+	maze[14][2].setUp(true); maze[14][3].setUp(true); maze[14][6].setUp(true);
+	maze[14][8].setUp(true); maze[14][10].setUp(true); maze[14][12].setUp(true);
+	maze[15][2].setUp(true); maze[15][3].setUp(true); maze[15][4].setUp(true);
+	maze[15][5].setUp(true); maze[15][7].setUp(true); maze[15][9].setUp(true);
+	maze[15][13].setUp(true); maze[15][14].setUp(true);
+	
+	
+	
+	maze[1][1].setLeft(true); maze[1][2].setLeft(true); maze[1][6].setLeft(true);
+	maze[1][7].setLeft(true); maze[1][14].setLeft(true); maze[1][15].setLeft(true);
+	maze[2][1].setLeft(true); maze[2][2].setLeft(true); maze[2][3].setLeft(true);
+	maze[2][5].setLeft(true); maze[2][6].setLeft(true); maze[2][7].setLeft(true);
+	maze[2][8].setLeft(true); maze[2][13].setLeft(true); maze[2][14].setLeft(true);
+	maze[2][15].setLeft(true);
+	maze[3][1].setLeft(true); maze[3][2].setLeft(true); maze[3][3].setLeft(true);
+	maze[3][4].setLeft(true); maze[3][6].setLeft(true); maze[3][7].setLeft(true);
+	maze[3][8].setLeft(true); maze[3][10].setLeft(true); maze[3][12].setLeft(true);
+	maze[3][15].setLeft(true);
+	maze[4][1].setLeft(true); maze[4][5].setLeft(true); maze[4][6].setLeft(true);
+	maze[4][7].setLeft(true); maze[4][9].setLeft(true); maze[4][11].setLeft(true);
+	maze[4][14].setLeft(true);
+	maze[5][3].setLeft(true); maze[5][4].setLeft(true); maze[5][6].setLeft(true);
+	maze[5][7].setLeft(true); maze[5][8].setLeft(true); maze[5][10].setLeft(true);
+	maze[5][12].setLeft(true); maze[5][13].setLeft(true); maze[5][14].setLeft(true);
+	maze[5][15].setLeft(true);
+	maze[6][1].setLeft(true); maze[6][3].setLeft(true); maze[6][5].setLeft(true);
+	maze[6][6].setLeft(true); maze[6][8].setLeft(true); maze[6][11].setLeft(true);
+	maze[6][12].setLeft(true); maze[6][13].setLeft(true); maze[6][14].setLeft(true);
+	maze[6][15].setLeft(true);
+	maze[7][1].setLeft(true); maze[7][3].setLeft(true); maze[7][4].setLeft(true);
+	maze[7][6].setLeft(true); maze[7][7].setLeft(true); maze[7][9].setLeft(true);
+	maze[7][11].setLeft(true); maze[7][12].setLeft(true); maze[7][13].setLeft(true);
+	maze[7][14].setLeft(true); maze[7][15].setLeft(true);
+	maze[8][1].setLeft(true); maze[8][2].setLeft(true); maze[8][3].setLeft(true);
+	maze[8][5].setLeft(true); maze[8][6].setLeft(true); maze[8][7].setLeft(true);
+	maze[8][9].setLeft(true); maze[8][11].setLeft(true); maze[8][12].setLeft(true);
+	maze[8][13].setLeft(true); maze[8][14].setLeft(true); maze[8][15].setLeft(true);
+	maze[9][1].setLeft(true); maze[9][2].setLeft(true); maze[9][3].setLeft(true);
+	maze[9][11].setLeft(true); maze[9][13].setLeft(true); maze[9][14].setLeft(true);
+	maze[9][15].setLeft(true);
+	maze[10][1].setLeft(true); maze[10][2].setLeft(true); maze[10][6].setLeft(true);
+	maze[10][9].setLeft(true); maze[10][11].setLeft(true); maze[10][12].setLeft(true);
+	maze[10][13].setLeft(true); maze[10][14].setLeft(true); maze[10][15].setLeft(true);
+	maze[11][2].setLeft(true); maze[11][3].setLeft(true); maze[11][6].setLeft(true);
+	maze[11][8].setLeft(true); maze[11][10].setLeft(true); maze[11][14].setLeft(true);
+	maze[11][15].setLeft(true);
+	maze[12][2].setLeft(true); maze[12][5].setLeft(true); maze[12][6].setLeft(true);
+	maze[12][7].setLeft(true); maze[12][9].setLeft(true); maze[12][11].setLeft(true);
+	maze[12][15].setLeft(true);
+	maze[13][1].setLeft(true); maze[13][2].setLeft(true); maze[13][6].setLeft(true);
+	maze[13][8].setLeft(true); maze[13][10].setLeft(true); maze[13][12].setLeft(true);
+	maze[13][14].setLeft(true); maze[13][15].setLeft(true);
+	maze[14][1].setLeft(true); maze[14][6].setLeft(true); maze[14][7].setLeft(true);
+	maze[14][9].setLeft(true); maze[14][11].setLeft(true); maze[14][13].setLeft(true);
+	maze[14][15].setLeft(true);
+	maze[15][1].setLeft(true); maze[15][12].setLeft(true);
+	
+}
+*/
+/*
+void Maze::dimThree(){
+	maze[1][1].setLeft(true);
+	maze[1][2].setLeft(true);
+	maze[2][1].setLeft(true);
+	maze[2][1].setUp(true);
+}
+*/
