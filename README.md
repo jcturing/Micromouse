@@ -26,8 +26,10 @@ Here I list all the component that the robot contains:
 ### Software
 The code provided in this repository uses the **Maze** and **MMouse** library. You can download them [here](https://github.com/jcturing/Arduino-Libraries).
 These libraries also depends on others so you may have to download the rest of them.
+
 In the Maze library, the maze is represented and the dimension and target cells of the maze can be changed. Here we run the Flood-Fill algorithm for the 
 decision making and we also route the shortest path to the target.
+
 In the MMouse library, every sensor and hardware is declarated. Also it contains functions to move as goForward, turnRight, turnLeft and turnAround.
 
 ## Contributing
